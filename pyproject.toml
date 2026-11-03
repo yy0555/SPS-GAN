@@ -1,0 +1,33 @@
+[build-system]
+requires = ["setuptools>=77"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "sps-gan"
+version = "0.1.0"
+description = "Structured Phase Space GAN for trajectories and videos"
+readme = "README.md"
+requires-python = ">=3.11,<3.12"
+license = "MIT"
+license-files = ["LICENSE"]
+authors = [
+    {name = "Yulong Yang"},
+    {name = "Jiayin Liu"},
+    {name = "Vineet Bansal"},
+    {name = "Christine Allen-Blanchette"},
+]
+dependencies = [
+    "numpy>=1.26,<2",
+    "torch>=2.7.1,<2.8",
+    "scikit-learn>=1.3,<1.6",
+    "imageio>=2.34,<3",
+    "imageio-ffmpeg>=0.5,<0.7",
+    "pillow>=10,<12",
+]
+
+[project.scripts]
+sps-gan = "sps_gan.__main__:main"
+
+[tool.setuptools.packages.find]
+where = ["src"]
+include = ["sps_gan*"]
